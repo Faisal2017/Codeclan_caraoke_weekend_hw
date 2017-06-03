@@ -8,12 +8,12 @@ class TestGuest < Minitest::Test
   end
 
   def test_guest_has_name
-    assert_equal("Zsolt", @guest.name)
+    assert_equal("Zsolt", @guest.guest_name)
   end
 
   
 
-   
+
 
 
 

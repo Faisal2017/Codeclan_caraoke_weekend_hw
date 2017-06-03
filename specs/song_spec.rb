@@ -8,7 +8,7 @@ class TestSong < Minitest::Test
   end
 
   def test_song_has_name
-    assert_equal("symphony", @song.name)
+    assert_equal("symphony", @song.song_name)
   end
 
   def test_song_has_artist 
