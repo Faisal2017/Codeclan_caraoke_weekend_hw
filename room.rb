@@ -2,15 +2,16 @@ class Room
 
   attr_reader :room_name, :room_capacity, :room_songs
 
-  def initialize(room_name) 
+  def initialize(room_name, current_guest, current_song) 
     @room_name = room_name
     @room_capacity = []
     @room_songs = []
+    @room_tab = 0
   end
 
   def check_in(guest_name)
-    @room_capacity.push(guest_name) if @room_capacity.length < 2 
-    return "Fully Booked!"
+    @room_capacity.push(guest_name) 
+    return "Fully Booked!" if @room_capacity.length > 1 
   end
 
   def check_out(guest_name)
@@ -37,8 +38,9 @@ class Room
     @room_songs.delete(song)
   end
 
-
-
+  # def room_charge(guest)
+  #   @room_tab + 20
+  # end 
 
 
 

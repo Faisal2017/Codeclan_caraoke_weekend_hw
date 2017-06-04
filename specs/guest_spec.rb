@@ -28,5 +28,4 @@ class TestGuest < Minitest::Test
 
 
 
-
 end  

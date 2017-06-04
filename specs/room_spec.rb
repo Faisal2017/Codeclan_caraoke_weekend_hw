@@ -8,9 +8,9 @@ class  TestRoom < MiniTest::Test
   def setup
     @song1 = Song.new("symphony", "clean bandit", 4.06)
     @song2 = Song.new("it ain't me", "kygo", 3.42)
-    @guest1 = Guest.new("Zsolt")
-    @guest2 = Guest.new("Sandy")
-    @room1 = Room.new("green room")
+    @guest1 = Guest.new("Zsolt", 30, "symphony")
+    @guest2 = Guest.new("Sandy", 40, "it ain't me")
+    @room1 = Room.new("green room", @guest1, @song1)
   end 
 
   # def test_room_name
@@ -61,7 +61,15 @@ class  TestRoom < MiniTest::Test
     assert_equal("Fully Booked!", @room1.check_in(@guest2))
   end
 
+  # def test_guests_get_charged
+  #   @room1.check_in(@guest2)
+  #   result = @room1.room_charge(@guest2)
+  #   assert_equal(20, result)
+  # end
 
+  def test_guest_can_cheer
+    assert_equal("Whoo!", @guest1.cheer(@song1.song_name))
+  end
 
 end
 
